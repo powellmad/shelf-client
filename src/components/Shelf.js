@@ -15,17 +15,16 @@ return (
                 return <>
                 <h1>Welcome to Shelf!</h1>
 
-                {
-                (localStorage.getItem("shelf_token") !== null) ?
+                {(localStorage.getItem("shelf_token") !== null) ?
                         <button className="nav-link fakeLink"
                             onClick={() => {
                                 localStorage.removeItem("shelf_token")
                                 history.push({ pathname: "/" })
                             }}
-                        >Logout</button> : <></>}
+                        >Logout</button> : <></>
             
-                    {/* <Route render={NavBar} />
-                    <Route render={props => <ApplicationViews {...props} />} /> */}
+                /* <Route render={NavBar} />
+                   <Route render={props => <ApplicationViews {...props} />} /> */}
                 </>
             } else {
                 return <Redirect to="/login" />
