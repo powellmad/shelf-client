@@ -17,7 +17,7 @@ export const ShopList = () => {
             <div className="shops">
                 {shops.map(shop => {
                         return <h3 key={shop.id} className="shop__name">
-                            <Link to="/{shop.id}">{ shop.name }</Link></h3>
+                            <Link to={`/shops/${shop.id}`}>{ shop.name }</Link></h3>
                     })
                 }
             </div>

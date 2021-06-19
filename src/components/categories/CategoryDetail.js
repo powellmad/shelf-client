@@ -1,37 +1,41 @@
 import React, { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router"
-import { Link } from "react-router-dom"
-import { ProductContext } from "../products/ProductProvider"
+import { useParams, Link } from "react-router-dom"
 import { CategoryContext } from "./CategoryProvider"
 
 export const CategoryDetail = () => {
-    const { products, getProducts } = useContext(ProductContext)
+    const { getCategoryById } = useContext(CategoryContext)
+    const [ categories, setCategories ] = useState([])
+    const { categoryId } = useParams()
 
-    const [category, setCategory] = useState([])
-
-    // route: /categories/:categoryId
-    const Category = () => {
-        const params = useParams();
-        return <h1>{params.categoryId}</h1>
-    }
+    // console.log(categoryId)
+    // console.log(categories)
 
     useEffect(() => {
-        getProducts()
+        getCategoryById(categoryId)
+            .then((response) => {
+                setCategories(response)
+            })
     }, [])
 
+    /* Following lines work on initial render then break on refresh
+    Error: shops and products undefined 
+    Getting 200 ok response - no backend errors
+
+    const shops = categories?.shop_set
+    // console.log(shops[0].products)
+    const products = shops[0].products
+    // console.log(products) */
+
+
     return (
-        <div className="category__component">
-            <h1>{Category}</h1>
-            <div className="products">
-                {products.map(product => {
-                    return (
-                        <Link to={`/products/${product.id}`}>
-                            <h3 key={product.id}>{product.name}</h3>
-                        </Link>
-                    )
-                })
-                }
-            </div>
-        </div>
+        <section className="category__products">
+            <h1>{categories.label}</h1>
+            {/* <div>
+                {shops.map(shop => {
+                    return <p>{shop?.name}</p>
+                })} 
+            </div>*/}
+        </section>
     )
+
 }
