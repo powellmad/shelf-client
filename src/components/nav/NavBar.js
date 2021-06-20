@@ -11,7 +11,7 @@ export const NavBar = (props) => {
                     <li className="logo">
                     <NavLink className="navbar__link" to="/">
                         <img className="navbar__logo" src={""} />
-                        <h2 className="shelf__title">Shelf</h2>
+                        <h2 className="shelf__title">SHELF</h2>
                     </NavLink>
                     </li>
                     <li className="navbar__item">

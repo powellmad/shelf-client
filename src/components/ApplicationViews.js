@@ -7,6 +7,8 @@ import { CategoryDetail } from "./categories/CategoryDetail.js"
 import { ShopDetail } from "./shops/ShopDetail.js"
 import { ShopProvider } from "./shops/ShopProvider"
 import { ShopList } from "./shops/ShopList"
+import { ShopForm } from "./shops/ShopForm"
+import { NewShop } from "./shops/NewShop"
 
 export const ApplicationViews = () => {
     return (
@@ -32,13 +34,23 @@ export const ApplicationViews = () => {
             </CategoryProvider>
 
             <ShopProvider>
-                <Route exact path="/shops">
-                    <ShopList />
-                </Route>
+                <CategoryProvider>
+                    <Route exact path="/shops">
+                        <ShopList />
+                    </Route>
 
-                <Route exact path="/shops/:shopId(\d+)">
-                    <ShopDetail />
-                </Route>
+                    <Route exact path="/shops/:shopId(\d+)">
+                        <ShopDetail />
+                    </Route>
+
+                    <Route exact path="/seller">
+                        <NewShop />
+                    </Route>
+
+                    <Route exact path="/shops/create">
+                        <ShopForm />
+                    </Route>
+                </CategoryProvider>
             </ShopProvider>
         </>
     )
