@@ -4,6 +4,8 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import Button from '@material-ui/core/Button';
+
 
 export const Shelf = () => {
 const history = useHistory()
@@ -15,13 +17,14 @@ return (
                 return <>
                 <h1>Welcome to Shelf!</h1>
 
+
                 {(localStorage.getItem("shelf_token") !== null) ?
-                        <button className="nav-link fakeLink"
+                        <Button variant="contained" color="primary"
                             onClick={() => {
                                 localStorage.removeItem("shelf_token")
                                 history.push({ pathname: "/" })
                             }}
-                        >Logout</button> : <></>
+                        >Logout</Button> : <></>
             
                 /* <Route render={NavBar} />
                    <Route render={props => <ApplicationViews {...props} />} /> */}
