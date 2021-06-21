@@ -1,0 +1,13 @@
+.categories-header {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.product_cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em;
+}
