@@ -33,7 +33,7 @@ export const ProductCard = ({ product, shopName }) => {
             <CardHeader
                 avatar={
                     <Avatar aria-label="shop" className={classes.avatar}>
-                        WA
+                        S
                     </Avatar>
                 }
                 action={
