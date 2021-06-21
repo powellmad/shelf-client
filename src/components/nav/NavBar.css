@@ -1,5 +1,11 @@
-li {
+.navbar li {
     list-style: none;
+}
+
+.header {
+    display: flex;   
+    justify-content: space-between;
+    margin-left: 80px;
 }
 
 .navbar {
@@ -8,18 +14,35 @@ li {
     justify-content: left;
     height: 4em;
     margin: 0;
+    background-color: #827dee;
 }
-.logo {
-    width: 9rem;
+
+.logout {
+    margin: 10px 10px 10px 0;
 }
 
 .navbar__item {
-    flex-basis: 15%;
     list-style-type: none;
     align-self: center;
     text-align: center;
 }
 
-.logout_button {
-    align-self: right;
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar__link {
+    color: white;
+    text-decoration: none;
+    text-shadow: 1em;
+}
+
+.navbar__link:hover {
+    font-weight:100;
+}
+
+.navbar__logo {
+    display: block;
+    height: 10em;
+    margin: 1em auto;
 }

@@ -1,7 +1,7 @@
-h1 {
+.home h1 {
     text-align: center;
 }
 
-p {
+.home p {
     margin: 0 250px;
 }

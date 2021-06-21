@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { CategoryContext } from "./CategoryProvider"
+import { ProductCard } from "../products/ProductCard"
+import "./Category.css"
 
 export const CategoryDetail = () => {
     const { getCategoryById } = useContext(CategoryContext)
-    const [ categories, setCategories ] = useState([])
+    const [categories, setCategories] = useState({})
     const { categoryId } = useParams()
 
-    // console.log(categoryId)
-    // console.log(categories)
+    console.log(categoryId)
+    console.log(categories)
 
     useEffect(() => {
         getCategoryById(categoryId)
@@ -17,24 +19,22 @@ export const CategoryDetail = () => {
             })
     }, [])
 
-    /* Following lines work on initial render then break on refresh
-    Error: shops and products undefined 
-    Getting 200 ok response - no backend errors
-
-    const shops = categories?.shop_set
-    // console.log(shops[0].products)
-    const products = shops[0].products
-    // console.log(products) */
-
+    let shops = []
+    let products = []
+    
+    if (categories.shop_set?.length) {
+        shops = categories.shop_set
+        products = shops[0].products
+    }
 
     return (
         <section className="category__products">
             <h1>{categories.label}</h1>
-            {/* <div>
-                {shops.map(shop => {
-                    return <p>{shop?.name}</p>
-                })} 
-            </div>*/}
+            <div>
+                {products.map(product => {
+                    <ProductCard key={product.id} product={product}/>
+                })}
+            </div>
         </section>
     )
 
