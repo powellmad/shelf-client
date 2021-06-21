@@ -1,0 +1,43 @@
+.shop-header-text {
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    font-size: large;
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+    text-align: center;
+    text-shadow: 0 0 1em #000000;
+}
+
+.shop-header-text h1 {
+    font-size: 60pt;
+}
+
+.shop-header-text p {
+    font-size: 20pt;
+}
+
+.shop-header-image {
+    margin-top: -100px;
+    width: 100%;
+    height: auto;
+    opacity: .9;
+}
+
+.shop__cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+#shop-card {
+    width: 40em;
+    margin: .5em;
+}
+
+.shops-header {
+    text-align: center;
+    padding-bottom: 1em;
+}

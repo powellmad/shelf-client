@@ -1,7 +1,37 @@
-.home h1 {
+.home {
     text-align: center;
 }
 
 body {
     background-color: #f4f5f7;
+
+}
+
+.header-text {
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    font-size: large;
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+    text-align: center;
+    text-shadow: 0 0 2em #000000;
+}
+
+.header-text h1 {
+    font-size: 60pt;
+}
+
+.header-text p {
+    font-size: 20pt;
+}
+
+.header-image {
+    margin-top: -100px;
+    width: 100%;
+    height: auto;
+    opacity: .92;
+    background-color: #000000;
 }
