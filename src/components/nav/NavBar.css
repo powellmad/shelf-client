@@ -5,7 +5,8 @@
 .header {
     display: flex;   
     justify-content: space-between;
-    margin-left: 80px;
+    padding-left: 80px;
+    background-color: white;
 }
 
 .navbar {

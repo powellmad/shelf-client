@@ -3,5 +3,9 @@
 }
 
 .home p {
-    margin: 0 250px;
+    /* margin: 0 250px; */
+}
+
+body {
+    background-color: #f4f5f7;
 }
