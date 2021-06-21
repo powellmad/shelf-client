@@ -7,6 +7,8 @@ import AppBar from '@material-ui/core/AppBar';
 import "./NavBar.css"
 import shelf from "../images/shelf.png"
 import Typography from '@material-ui/core/Typography';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 export const NavBar = () => {
 
@@ -14,13 +16,13 @@ export const NavBar = () => {
         <>
             <div className="header">
                 <div> </div>
-                <NavLink className="navbar__link logo" to="/">
+                <NavLink className="navbar__logo" to="/">
                     <img className="navbar__logo" src={shelf} />
                 </NavLink>
                 <div className="logout">
                     {(localStorage.getItem("shelf_token") !== null) ?
                         <li className="navbar__item navbar__button">
-                            <Button variant="contained" color="primary"
+                            <Button variant="default" color="primary"
                                 onClick={() => {
                                     localStorage.removeItem("shelf_token")
                                 }}>Logout</Button>
@@ -42,12 +44,12 @@ export const NavBar = () => {
                     <ul className="navbar">
                         <li className="navbar__item">
                             <Typography >
-                                <NavLink className="navbar__link" to="/categories">Categories</NavLink>
+                                <NavLink className="navbar__link" to="/categories">Shop By Category</NavLink>
                             </Typography>
                         </li>
                         <li className="navbar__item">
                             <Typography>
-                                <NavLink className="navbar__link" to="/shops">Shops</NavLink>
+                                <NavLink className="navbar__link" to="/shops"> Browse Shops</NavLink>
                             </Typography>
                         </li>
                         <li className="navbar__item">
@@ -55,9 +57,20 @@ export const NavBar = () => {
                                 <NavLink className="navbar__link" to="/seller">Become a Seller</NavLink>
                             </Typography>
                         </li>
+                    </ul>
+                    <ul className="navbar">
                         <li className="navbar__item">
                             <Typography>
-                                <NavLink className="navbar__link" to="/cart">Shopping Cart</NavLink>
+                                <NavLink className="navbar__icon" to="/profile">
+                                    <AccountCircleIcon />
+                                </NavLink>
+                            </Typography>
+                        </li>
+                        <li className="navbar__item">
+                            <Typography>
+                                <NavLink className="navbar__icon" to="/cart">
+                                    <ShoppingCartIcon />
+                                </NavLink>
                             </Typography>
                         </li>
                     </ul>

@@ -12,12 +12,15 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-between;
     height: 4em;
     margin: 0;
     background-color: #827dee;
 }
 
+.navbar-tabs {
+    display: flex;
+}
 .logout {
     margin: 10px 10px 10px 0;
 }
@@ -36,14 +39,23 @@
     color: white;
     text-decoration: none;
     text-shadow: 1em;
+    margin: 0 1.5em;
+}
+
+.navbar__icon {
+    color: white;
+    text-decoration: none;
+    text-shadow: .2em;
 }
 
 .navbar__link:hover {
-    font-weight:100;
+    font-size: 12.1pt;
+    text-shadow: 0px 0px .4em black;
 }
 
 .navbar__logo {
     display: block;
     height: 10em;
     margin: 1em auto;
+    min-width: 400px;
 }

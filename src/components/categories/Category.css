@@ -6,8 +6,17 @@ h1 {
     text-align: center;
 }
 
-.product_cards {
+.categories-header {
+    padding-bottom: 1em;
+}
+
+.category__cards {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
-    margin: 1em;
+}
+
+#category-card {
+    width: 40em;
+    margin: .5em;
 }
