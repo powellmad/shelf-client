@@ -18,11 +18,10 @@ export const CategoryList = () => {
 
             <div className="categories">
                 {categories.map(category => {
-                        return <Typography variant="h5" key={category.id} className="category__label">
-                            <Link to={`/categories/${category.id}`}>{ category.label }</Link>
-                            </Typography>
-                            
-                    })
+                    return <Typography variant="h5" key={category.id} className="category__label">
+                        <Link to={`/categories/${category.id}`}>{category.label}</Link>
+                    </Typography>
+                })
                 }
             </div>
         </div>

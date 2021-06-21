@@ -29,7 +29,7 @@ export const ProductCard = ({ product, shopName }) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} id="product-card">
             <CardHeader
                 avatar={
                     <Avatar aria-label="shop" className={classes.avatar}>
@@ -61,7 +61,7 @@ export const ProductCard = ({ product, shopName }) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to cart">
+                <IconButton aria-label="add to cart" className="cart-button">
                     <AddShoppingCartIcon />
                 </IconButton>
 

@@ -8,6 +8,10 @@ h1 {
 
 .product_cards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 1em;
+}
+
+.category__products {
+    margin: 0 10em;
 }

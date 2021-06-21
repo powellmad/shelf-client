@@ -1,0 +1,7 @@
+.cart-button {
+    align-self: flex-end;
+}
+
+#product-card {
+    display: flex;
+}
