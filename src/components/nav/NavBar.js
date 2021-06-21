@@ -1,8 +1,9 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import Button from '@material-ui/core/Button'
 import "./NavBar.css"
 
-export const NavBar = (props) => {
+export const NavBar = () => {
 
     return (
         <>
@@ -33,12 +34,11 @@ export const NavBar = (props) => {
                         {
                             (localStorage.getItem("shelf_token") !== null) ?
                                 <li className="navbar__item">
-                                    <button className="nav-link fakeLink"
+                                    <Button variant="contained" color="primary"
                                         onClick={() => {
                                             localStorage.removeItem("shelf_token")
-                                            props.history.push({ pathname: "/" })
                                         }}
-                                    >Logout</button>
+                                    >Logout</Button>
                                 </li> :
                                 <>
                                     <li className="nav-item">

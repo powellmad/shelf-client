@@ -6,13 +6,20 @@ li {
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    height: 4em;
+    margin: 0;
 }
-
 .logo {
     width: 9rem;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    flex-basis: 15%;
     list-style-type: none;
+    align-self: center;
+    text-align: center;
+}
+
+.logout_button {
+    align-self: right;
 }

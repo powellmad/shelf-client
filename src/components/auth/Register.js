@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Button from '@material-ui/core/Button'
 import "./Auth.css"
 
 export const Register = (props) => {
@@ -75,7 +76,7 @@ export const Register = (props) => {
                 <fieldset style={{
                     textAlign: "center"
                 }}>
-                    <button className="btn btn-1 btn-sep icon-send" type="submit">Register</button>
+                    <Button variant="contained" color="primary" type="submit">Register</Button>
                 </fieldset>
             </form>
             <section className="link--register">
