@@ -41,3 +41,20 @@
     text-align: center;
     padding-bottom: 1em;
 }
+
+.new-shop-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+}
+
+.form {
+    justify-content: center;
+}
+
+#form-button {
+    width: 7em;
+    margin-left: 12em;
+}
