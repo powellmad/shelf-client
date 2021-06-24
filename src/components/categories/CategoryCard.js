@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const CategoryCard = (category) => {
+export const CategoryCard = ({category}) => {
   const classes = useStyles();
 
   return (
@@ -30,8 +30,8 @@ export const CategoryCard = (category) => {
           title={category.label}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h2">
-            {category.label}
+          <Typography gutterBottom variant="h4" component="h4">
+           {category.label}
           </Typography>
         </CardContent>
       </CardActionArea>

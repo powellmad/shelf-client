@@ -1,14 +1,11 @@
 .categories-header {
     text-align: center;
+    padding-bottom: 1em;
 }
 
 h1 {
     text-align: center;
-}
-
-.categories-header {
-    padding-bottom: 1em;
-}
+} 
 
 .category__cards {
     display: flex;
