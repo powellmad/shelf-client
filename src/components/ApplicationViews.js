@@ -9,6 +9,7 @@ import { ShopDetail } from "./shops/ShopDetail.js"
 import { ShopProvider } from "./shops/ShopProvider"
 import { ShopList } from "./shops/ShopList"
 import { ShopForm } from "./shops/ShopForm"
+import { OrderForm } from "./orders/OrderForm"
 import { NewShop } from "./shops/NewShop"
 import { OrderCart } from "./orders/OrderCart"
 
@@ -61,6 +62,9 @@ export const ApplicationViews = () => {
             <OrderProvider>
                 <Route exact path="/cart">
                     <OrderCart />
+                </Route>
+                <Route exact path="/cart/checkout">
+                    <OrderForm />
                 </Route>
             </OrderProvider>
         </>

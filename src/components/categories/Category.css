@@ -7,6 +7,11 @@ h1 {
     text-align: center;
 } 
 
+body {
+    background-color: #f4f5f7;
+
+}
+
 .category__cards {
     display: flex;
     flex-flow: row wrap;

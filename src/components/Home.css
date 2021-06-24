@@ -2,11 +2,6 @@
     text-align: center;
 }
 
-body {
-    background-color: #f4f5f7;
-
-}
-
 .header-text {
     flex-direction: column;
     align-self: center;

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { CategoryContext } from "../categories/CategoryProvider";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { Typography } from "@material-ui/core";
+import { Typography, Card } from "@material-ui/core";
 import Button from '@material-ui/core/Button';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -50,7 +50,7 @@ export const ShopForm = () => {
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-        <div className="form">
+        <Card className="shop-form">
             <Typography className="categories-header" variant="h3">Add Your Shop</Typography>
             <form className="new-shop-form" onSubmit={handleSubmit(onSubmit)}>
                 <FormControl className={classes.formControl}>
@@ -74,6 +74,6 @@ export const ShopForm = () => {
                 {errors.exampleRequired && <span>This field is required</span>}
                 <Button id="form-button" variant="contained" color="primary" type="submit">Submit</Button>
             </form>
-        </div>
+        </Card>
     )
 }

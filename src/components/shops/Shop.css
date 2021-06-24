@@ -11,6 +11,11 @@
     text-shadow: 0 0 1em #000000;
 }
 
+body {
+    background-color: #f4f5f7;
+
+}
+
 .shop-header-text h1 {
     font-size: 60pt;
 }
@@ -46,15 +51,18 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 500px;
     margin: auto;
 }
 
-.form {
+.shop-form {
     justify-content: center;
+    padding: 60px;
+    width: 70%;
+    margin: auto;
 }
 
 #form-button {
     width: 7em;
-    margin-left: 12em;
+    margin-left: 78%;
 }
