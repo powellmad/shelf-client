@@ -9,6 +9,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { ShopContext } from "../shops/ShopProvider"
+import { AddShoppingCart } from "@material-ui/icons";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,24 +31,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ShopForm = () => {
-    const { getCategories } = useContext(CategoryContext)
-    const [categories, setCategories] = useState([])
-    const [category, setCategory] = React.useState('');
+    const { getCategories, categories } = useContext(CategoryContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { addShop } = useContext(ShopContext)
 
     const classes = useStyles();
 
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    };
-
     const onSubmit = (data) => {
+        data.logo_path = ""
+        addShop(data)
+        
         alert(JSON.stringify(data));
     };
 
     useEffect(() => {
         getCategories()
-            .then(setCategories)
     }, [])
 
     return (
@@ -55,15 +54,14 @@ export const ShopForm = () => {
             <Typography className="categories-header" variant="h3">Add Your Shop</Typography>
             <form className="new-shop-form" onSubmit={handleSubmit(onSubmit)}>
                 <FormControl className={classes.formControl}>
-                    <TextField id="outlined-basic" label="Shop Name" variant="outlined" />
+                    <TextField id="outlined-basic" label="Shop Name" variant="outlined" {...register("name")} />
                 </FormControl>
                 <FormControl variant="outlined" className={classes.formControl}>
-                    <InputLabel id="category-label">Select Category</InputLabel>
+                    <InputLabel id="category-label" >Select Category</InputLabel>
                     <Select
                         labelId="category-label"
                         id="demo-simple-select-outlined"
-                        value={category}
-                        onChange={handleChange}
+                        {...register("category")}
                         label="Category"
                     >
                         <MenuItem value="">
@@ -72,18 +70,6 @@ export const ShopForm = () => {
                         {categories?.map(category => <MenuItem value={category.id}>{category.label}</MenuItem>)}
                     </Select>
                 </FormControl>
-                {/* <FormControl variant="outlined" className={classes.formControl}>
-                    <Select
-                        labelId="category-select-label"
-                        id="category-select"
-                        value={category.label}
-                        onChange={handleChange}
-                        defaultValue="Select a Category"
-                        label="Select a Category"
-                    >
-                         <MenuItem key={category.id} value={category.label}></MenuItem>)}
-                    </Select>
-                </FormControl> */}
 
                 {errors.exampleRequired && <span>This field is required</span>}
                 <Button id="form-button" variant="contained" color="primary" type="submit">Submit</Button>

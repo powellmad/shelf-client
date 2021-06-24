@@ -37,7 +37,7 @@
     margin: .5em;
 }
 
-.shops-header {
+.shop-header, .shops-header {
     text-align: center;
     padding-bottom: 1em;
 }

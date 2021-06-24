@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { ShopContext } from "./ShopProvider"
 import { ProductCard } from "../products/ProductCard"
+import Typography from '@material-ui/core/Typography';
 import "../products/Product.css"
 import "./Shop.css"
 
@@ -23,7 +24,7 @@ export const ShopDetail = () => {
 
     return (
         <div className="shop__products">
-            <h1>{shops.name}</h1>
+            <Typography className="shop-header" variant="h3">{shops.name}</Typography>
             <div className="product_cards">
                 {products.map(product => {
                         return <ProductCard key={product.id} product={product} shopName={shops.name}/>

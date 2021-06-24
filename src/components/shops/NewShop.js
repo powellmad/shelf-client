@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button'
 import image from "../images/seller.jpg"
 import "./Shop.css"
 
-
 export const NewShop = () => {
     const history = useHistory()
 

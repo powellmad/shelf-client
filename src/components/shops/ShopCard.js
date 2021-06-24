@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import image from "../images/default-image.png"
+
 
 const useStyles = makeStyles({
   root: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const ShopCard = (shop) => {
+export const ShopCard = ({shop}) => {
   const classes = useStyles();
 
   return (
@@ -26,11 +26,11 @@ export const ShopCard = (shop) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={image}
+          image={shop.logo_path}
           title={shop.name}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h2">
+          <Typography gutterBottom variant="h5" component="h4">
             {shop.name}
           </Typography>
         </CardContent>
