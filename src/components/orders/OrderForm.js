@@ -102,7 +102,7 @@ export const OrderForm = () => {
                 <p>Tax:</p>
                 <p>Total:</p>
                 <Button className="checkout-button" variant="contained" color="primary" size="small"
-                    onClick={handleClick(order=order)}>
+                    onClick={() => handleClick(order)}>
                     Place Order
                 </Button>
             </CardContent>

@@ -10,17 +10,21 @@ import "../products/Product.css"
 import "./Order.css"
 
 export const OrderCart = () => {
-    const { getOrders } = useContext(OrderContext)
-    const [cart, setOrder] = useState([])
+    const { orders, getOrders } = useContext(OrderContext)
+    const [order, setOrder] = useState([])
     const history = useHistory()
+
+    let cart = {}
 
     useEffect(() => {
         getOrders()
-            .then((res) => {
-                const order = res.find(order => order.is_open === true)
-                setOrder(order)
-            })
-    }, [])
+        .then((orders) => {
+            cart = orders.find(order => order.is_open === true)
+            console.log(orders)
+            setOrder(cart)
+        })
+        
+        }, [])
 
     // const subtotal = () => {
     //     let amount=0
@@ -32,8 +36,8 @@ export const OrderCart = () => {
         <div className="cart-order">
             <div className="cart_cards">
                 <Typography className="cart-header" variant="h3">Shopping Cart</Typography>
-                {cart.products?.map(product => {
-                    return <CartCard key={product.id} order={cart.id} product={product} />
+                {order.products?.map(product => {
+                    return <CartCard key={product.id} order={order.id} product={product} />
                 })
                 }
             </div>

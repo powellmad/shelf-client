@@ -11,9 +11,10 @@ export const OrderProvider = (props) => {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`
             }
         })
-            .then(response => response.json())
-            .then((res) => {
+            .then(response => {
+                const res = response.json()
                 setOrders(res)
+                return res
             })
     }
 
@@ -47,7 +48,7 @@ export const OrderProvider = (props) => {
     }
 
     const placeOrder = (orderId) => {
-        return fetch(`http://localhost:8000/orders/{orderId}`, {
+        return fetch(`http://localhost:8000/orders/${orderId}/checkout`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`,
                 "Content-Type": 'application/json'
