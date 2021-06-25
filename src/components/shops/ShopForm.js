@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import {useHistory} from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { CategoryContext } from "../categories/CategoryProvider";
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,14 +35,15 @@ export const ShopForm = () => {
     const { getCategories, categories } = useContext(CategoryContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { addShop } = useContext(ShopContext)
-
+    const history = useHistory()
     const classes = useStyles();
 
     const onSubmit = (data) => {
         data.logo_path = ""
         addShop(data)
         
-        alert(JSON.stringify(data));
+        alert(JSON.stringify(data.name + " has been added"))
+        history.push("/shops")
     };
 
     useEffect(() => {

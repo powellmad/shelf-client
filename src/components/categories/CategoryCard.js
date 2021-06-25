@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import image from "../images/default-image.png"
 
 const useStyles = makeStyles({
   root: {
@@ -26,7 +25,7 @@ export const CategoryCard = ({category}) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={image}
+          // image={category.label}
           title={category.label}
         />
         <CardContent>

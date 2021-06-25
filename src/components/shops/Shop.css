@@ -39,7 +39,7 @@ body {
 
 #shop-card {
     width: 40em;
-    margin: .5em;
+    margin: 1em;
 }
 
 .shop-header, .shops-header {
@@ -65,4 +65,8 @@ body {
 #form-button {
     width: 7em;
     margin-left: 78%;
+}
+
+#add-product-button {
+    height: 40px;
 }

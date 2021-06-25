@@ -20,14 +20,20 @@ const useStyles = makeStyles({
     },
 });
 
-export const CartCard = ({ product, shopName }) => {
+export const CartCard = ({ order, product, shopName }) => {
     const classes = useStyles();
+
+    const {removeFromOrder} = useContext(OrderContext)
+
+    const handleRemove = ( product) => {
+        removeFromOrder(order, product.id)
+    }
 
     return (
         <Card className={classes.root} id="cart-card">
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    {shopName}
+                   {shopName}
                 </Typography>
                 <Typography variant="h5" component="h2">
                     {product.name}
@@ -43,7 +49,7 @@ export const CartCard = ({ product, shopName }) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Remove</Button>
+                <Button onClick={() => handleRemove(product)} aria-label="remove from cart" size="small">Remove</Button>
             </CardActions>
         </Card>
     )
