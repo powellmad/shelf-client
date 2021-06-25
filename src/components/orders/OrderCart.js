@@ -22,11 +22,11 @@ export const OrderCart = () => {
             })
     }, [])
 
-    const subtotal = () => {
-        let amount=0
-        cart.products.map(product => amount += product.price)
-        return (amount)
-    }
+    // const subtotal = () => {
+    //     let amount=0
+    //     cart.products.map(product => amount += product.price)
+    //     return (amount)
+    // }
 
     return (
         <div className="cart-order">
@@ -42,7 +42,7 @@ export const OrderCart = () => {
                     <Typography variant="h4" component="h2">
                         Order Summary
                     </Typography>
-                    <p>Subtotal: {subtotal}</p>
+                    <p>Subtotal: </p>
                     <p>Tax:</p>
                     <p>Total:</p>
                     <Button className="checkout-button" variant="contained" color="primary" size="small" onClick={() => history.push("/cart/checkout")}>
