@@ -67,9 +67,6 @@ const StyledMenuItem = withStyles((theme) => ({
     },
 }))(MenuItem);
 
-
-
-
 export const ProductCard = ({ product, shopName }) => {
     const classes = useStyles();
     const { addToOrder } = useContext(OrderContext)

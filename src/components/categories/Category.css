@@ -19,6 +19,7 @@ body {
 }
 
 #category-card {
+    text-decoration: none;
     width: 40em;
     margin: .5em;
 }

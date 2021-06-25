@@ -3,12 +3,14 @@ import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { OrderProvider } from "./orders/OrderProvider"
 import { CategoryProvider } from "./categories/CategoryProvider"
+import {ProductProvider} from "./products/ProductProvider"
 import { CategoryList } from "./categories/CategoryList"
 import { CategoryDetail } from "./categories/CategoryDetail.js"
 import { ShopDetail } from "./shops/ShopDetail.js"
 import { ShopProvider } from "./shops/ShopProvider"
 import { ShopList } from "./shops/ShopList"
 import { ShopForm } from "./shops/ShopForm"
+import { ProductForm } from "./products/ProductForm"
 import { OrderForm } from "./orders/OrderForm"
 import { NewShop } from "./shops/NewShop"
 import { OrderCart } from "./orders/OrderCart"
@@ -59,6 +61,15 @@ export const ApplicationViews = () => {
                     </OrderProvider>
                 </CategoryProvider>
             </ShopProvider>
+
+            <ShopProvider>
+                <ProductProvider>
+                    <Route exact path="/shops/:shopId(\d+)/product/new">
+                        <ProductForm />
+                    </Route>
+                </ProductProvider>
+            </ShopProvider>
+
             <OrderProvider>
                 <Route exact path="/cart">
                     <OrderCart />
