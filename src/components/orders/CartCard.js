@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { OrderContext } from "../orders/OrderProvider"
 // Material UI Imports
 import { makeStyles } from '@material-ui/core/styles';
