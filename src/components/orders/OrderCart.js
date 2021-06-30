@@ -10,7 +10,7 @@ import "../products/Product.css"
 import "./Order.css"
 
 export const OrderCart = () => {
-    const { orders, getOrders } = useContext(OrderContext)
+    const { getOrders } = useContext(OrderContext)
     const [order, setOrder] = useState([])
     const history = useHistory()
 
