@@ -49,30 +49,56 @@ export const OrderForm = () => {
     }
 
     const handleClick = (order) => {
-        placeOrder(order.id)
-        alert("Success! Your Order has been placed!")
-        history.push("/")
+        if (order) {
+            placeOrder(order.id)
+            alert("Success! Your Order has been placed!")
+            history.push("/")
+        } else {
+            window.alert("The order is empty")
+        }
     };
+
+    const subtotal = () => {
+        let amount = 0
+        order?.products?.map(product => amount += product?.price)
+        return (amount.toFixed(2))
+    }
+
+    const tax = () => {
+        return (subtotal() / 9.75).toFixed(2)
+    }
+
+    const total = () => {
+        let salesTax = parseFloat(subtotal()) + parseFloat(tax())
+        return (salesTax.toFixed(2))
+    }
 
     return (<div className="order-form">
         <Card >
             <div className="form">
                 <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+
                     <Typography className="shipping-header" variant="h3">Shipping Information</Typography>
                     <FormControl className={classes.formControl}>
-                        <TextField id="outlined-basic" label="Address" variant="outlined" {...register("address")} />
+                        <TextField id="outlined-basic" label="Address" variant="outlined" {...register("address",
+                            { required: true })} />
+                        {errors.address?.type === 'required' && "Address is required"}
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <TextField id="outlined-basic" label="City" variant="outlined" {...register("city")} />
+                        <TextField id="outlined-basic" label="City" variant="outlined" {...register("city",
+                            { required: true })} />
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <TextField id="outlined-basic" label="State" variant="outlined" {...register("state")} />
+                        <TextField id="outlined-basic" label="State" variant="outlined" {...register("state",
+                            { required: true })} />
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <TextField id="outlined-basic" label="Zipcode" variant="outlined" {...register("zipcode")} />
+                        <TextField id="outlined-basic" label="Zipcode" variant="outlined" {...register("zipcode",
+                            { required: true })} />
                     </FormControl>
                     <FormControl className={classes.formControl}>
-                        <TextField id="outlined-basic" label="Phone Number" variant="outlined" {...register("phone")} />
+                        <TextField id="outlined-basic" label="Phone Number" variant="outlined" {...register("phone",
+                            { required: true })} />
                     </FormControl>
                     {errors.exampleRequired && <span>This field is required</span>}
                 </form>
@@ -98,9 +124,9 @@ export const OrderForm = () => {
                 <Typography variant="h4" component="h2">
                     Order Summary
             </Typography>
-                <p>Subtotal:</p>
-                <p>Tax:</p>
-                <p>Total:</p>
+                <p>Subtotal: ${subtotal()}</p>
+                <p>Tax: ${tax()}</p>
+                <p>Total: ${total()}</p>
                 <Button className="checkout-button" variant="contained" color="primary" size="small"
                     onClick={() => handleClick(order)}>
                     Place Order

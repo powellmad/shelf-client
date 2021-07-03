@@ -11,7 +11,8 @@
 .product_cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    justify-content: center;
     margin: 2em;
 }
 
@@ -27,6 +28,10 @@
 
 .checkout-button {
     margin: 1em;
+}
+
+.cart_cards {
+    flex-basis: 60%;
 }
 
 #cart-card {

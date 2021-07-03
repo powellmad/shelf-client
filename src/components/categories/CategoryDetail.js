@@ -38,10 +38,10 @@ export const CategoryDetail = () => {
     return (
         <section className="category__products">
             <Typography className="categories-header" variant="h3">{categories.label}</Typography>
-            <div className="products-flex">
+            <div className="products-flex product_cards">
                 {shops.map(shop => {
                     return <>
-                        <div className="product_cards">
+                        <div>
                             {shop.products?.map(product => <ProductCard key={product.id} product={product} shopName={shop.name} />
                             )}</div>
                     </>

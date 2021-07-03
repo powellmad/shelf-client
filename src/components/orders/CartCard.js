@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -22,18 +23,26 @@ const useStyles = makeStyles({
 
 export const CartCard = ({ order, product, shopName }) => {
     const classes = useStyles();
+    const history = useHistory()
 
-    const {removeFromOrder} = useContext(OrderContext)
+    const { removeFromOrder } = useContext(OrderContext)
 
-    const handleRemove = ( product) => {
+    const refreshPage = () => {
+        window.location.reload(false);
+    }
+
+
+    const handleRemove = (product) => {
         removeFromOrder(order, product.id)
+        history.push("/cart")
+        refreshPage()
     }
 
     return (
         <Card className={classes.root} id="cart-card">
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
-                   {shopName}
+                    {shopName}
                 </Typography>
                 <Typography variant="h5" component="h2">
                     {product.name}

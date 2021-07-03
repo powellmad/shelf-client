@@ -108,8 +108,8 @@ export const ProductCard = ({ product, shopName }) => {
             </StyledMenu>
         </div>
 
-        <Card className={classes.root}>
-            {product.is_current_user ?
+        <Card className={classes.root} id="product-card">
+            {/* {product.is_current_user ? */}
                 <CardHeader
                     avatar={
                         <Avatar aria-label="shop" className={classes.avatar}>
@@ -123,7 +123,7 @@ export const ProductCard = ({ product, shopName }) => {
                     }
                     title={shopName}
                 />
-                :
+                {/* :
                 <CardHeader
                     avatar={
                         <Avatar aria-label="shop" className={classes.avatar}>
@@ -132,7 +132,7 @@ export const ProductCard = ({ product, shopName }) => {
                     }
                     title={shopName}
                 />
-            }
+            } */}
             <CardMedia
                 className={classes.media}
                 title="{product.name}"

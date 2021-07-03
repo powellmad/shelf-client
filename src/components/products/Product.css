@@ -1,8 +1,4 @@
-/* .product_cards {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 2em;
-} */
+
 
 .product-form {
     justify-content: center;
@@ -17,4 +13,10 @@
     flex-direction: column;
     width: 500px;
     margin: auto;
+}
+
+#product-card {
+    min-width: 345px;
+    min-height: 558px;
+    margin: 10px;
 }
