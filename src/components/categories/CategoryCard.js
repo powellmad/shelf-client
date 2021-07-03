@@ -25,11 +25,10 @@ export const CategoryCard = ({category}) => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          // image={category.label}
           title={category.label}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h4">
+          <Typography gutterBottom variant="h4" component="h4" underline="none">
            {category.label}
           </Typography>
         </CardContent>

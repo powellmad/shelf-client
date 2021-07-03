@@ -6,7 +6,7 @@ export const OrderProvider = (props) => {
     const [orders, setOrders] = useState([])
 
     const getOrders = () => {
-        return fetch("https://shelf-sm.herokuapp.com/orders", {
+        return fetch("http://127.0.0.1:8000/orders", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`
             }
@@ -19,7 +19,7 @@ export const OrderProvider = (props) => {
     }
 
     const addToOrder = (id) => {
-        return fetch(`https://shelf-sm.herokuapp.com/orders`, {
+        return fetch(`http://127.0.0.1:8000/orders`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`,
                 "Content-Type": 'application/json'
@@ -35,7 +35,7 @@ export const OrderProvider = (props) => {
     }
 
     const removeFromOrder = (orderId, productId) => {
-        return fetch(`https://shelf-sm.herokuapp.com/orders/${orderId}`, {
+        return fetch(`http://127.0.0.1:8000/orders/${orderId}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`,
                 "Content-Type": 'application/json'
@@ -48,7 +48,7 @@ export const OrderProvider = (props) => {
     }
 
     const placeOrder = (orderId) => {
-        return fetch(`https://shelf-sm.herokuapp.com/orders/${orderId}/checkout`, {
+        return fetch(`http://127.0.0.1:8000/orders/${orderId}/checkout`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`,
                 "Content-Type": 'application/json'

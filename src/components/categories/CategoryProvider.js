@@ -6,7 +6,7 @@ export const CategoryProvider = (props) => {
     const [categories, setCategories] = useState([])
 
     const getCategories = () => {
-        return fetch("https://shelf-sm.herokuapp.com/categories", {
+        return fetch("http://127.0.0.1:8000/categories", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`
             }
@@ -16,7 +16,7 @@ export const CategoryProvider = (props) => {
     }
 
     const getCategoryById = (id) => {
-        return fetch(`https://shelf-sm.herokuapp.com/categories/${id}`, {
+        return fetch(`http://127.0.0.1:8000/categories/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem('shelf_token')}`
             }

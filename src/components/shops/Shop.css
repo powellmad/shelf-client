@@ -37,6 +37,12 @@ body {
     justify-content: space-evenly;
 }
 
+.shop__products {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
 #shop-card {
     width: 40em;
     margin: 1em;
@@ -69,4 +75,7 @@ body {
 
 #add-product-button {
     height: 40px;
+    width: 200px;
+    margin: auto;
+    justify-self: center;
 }

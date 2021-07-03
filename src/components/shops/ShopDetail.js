@@ -35,19 +35,19 @@ export const ShopDetail = () => {
     }
 
     const handleAdd = () => history.push(`/shops/${shopId}/product/new`)
-    
+
 
     return (
         <div className="shop__products">
             <Typography className="shop-header" variant="h3">{shops.name}</Typography>
-            <div className="product_cards">
-                <Button size="large" variant="contained" color="primary" id="add-product-button" onClick={handleAdd}>
-                    Add Product
+            <Button size="large" variant="contained" color="primary" id="add-product-button" onClick={handleAdd}>
+                Add Product
                 </Button>
+            <div className="product_cards">
+
                 {products.map(product => {
                     return <ProductCard key={product.id} product={product} shopName={shops.name} />
-                })
-                }
+                })}
 
             </div>
 
