@@ -18,7 +18,7 @@ export const CategoryList = () => {
 
             <div className="category__cards">
                 {categories.map(category => {
-                    return <Typography variant="h5" component="h2" key={category.id} className="category__label">
+                    return <Typography variant="h5" component="h2" key={category.id} className="category__label lb">
                                 <Link to={`/categories/${category.id}`}>
                                     <CategoryCard className="category_card" key={category.id} category={category} />
                                 </Link>
