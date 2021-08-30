@@ -58,13 +58,13 @@ export const NavBar = () => {
                         </li>
                     </ul>
                     <ul className="navbar">
-                        {/* <li className="navbar__item">
+                        <li className="navbar__item">
                             <Typography>
                                 <NavLink className="navbar__icon" to="/profile">
                                     <AccountCircleIcon />
                                 </NavLink>
                             </Typography>
-                        </li> */}
+                        </li>
                         <li className="navbar__item">
                             <Typography>
                                 <NavLink className="navbar__icon" to="/cart">

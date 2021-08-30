@@ -6,7 +6,7 @@ export const ShopProvider = (props) => {
     const [shops, setShops] = useState([])
 
     const getShops = () => {
-        return fetch("http://127.0.0.1:8000/shops", {
+        return fetch("http://shelf-sm.herokuapp.com/shops", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`
             }
@@ -16,7 +16,7 @@ export const ShopProvider = (props) => {
     }
 
     const getShopById = (id) => {
-        return fetch(`http://127.0.0.1:8000/shops/${id}`, {
+        return fetch(`http://shelf-sm.herokuapp.com/shops/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem('shelf_token')}`
             }
@@ -25,7 +25,7 @@ export const ShopProvider = (props) => {
     }
 
     const addShop = newShop => {
-        return fetch(`http://127.0.0.1:8000/shops`, {
+        return fetch(`http://shelf-sm.herokuapp.com/shops`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("shelf_token")}`,
                 "Content-Type": 'application/json'
